@@ -27,10 +27,10 @@ let passwordValidator = (req, res, next) => {
   }
 };
 
-app.post("/signup", usernameValidation, (req, res) => {
+app.post("/signup", usernameValidation,passwordValidator, (req, res) => {
   res.send("user registered successfully");
 });
-app.post("/login", passwordValidator, (req, res) => {
+app.post("/login", passwordValidator,passwordValidator, (req, res) => {
   res.send("login successful");
 });
 app.listen(3000, () => {
