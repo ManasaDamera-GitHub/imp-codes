@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
 
 app.post("/names", async (req, res) => {
   try {
-    let inputData = req.body;
+    let inputData = req.body.name;
     let existData = JSON.parse(await fs.readFile("./new.json", "utf8"));
     let isExistAlready = existing.find((x, y) => {
       return x.name == inputData.name;
