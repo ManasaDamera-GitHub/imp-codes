@@ -1,0 +1,224 @@
+/* General styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f4f4f4, #e0e0e0);
+    margin: 0;
+    padding: 20px;
+    /* color: #333; */
+    line-height: 1.6;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"] {
+    width: 95%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+    outline: none;
+}
+
+button {
+    padding: 12px 24px;
+    background-color: #61605d;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #757471, #61605d);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for the displayed data */
+#cont {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Responsive grid */
+    gap: 50px; /* Space between grid items */
+    padding: 50px;
+}
+
+#cont div {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#cont div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+#cont h1 {
+    font-size: 24px;
+    margin: 0 0 10px;
+    color: black;
+}
+
+#cont h3 {
+    font-size: 18px;
+    margin: 0 0 10px;
+    color: #555;
+}
+
+#cont p {
+    font-size: 20px;
+    margin: 0 0 10px;
+    color: #393835;
+}
+
+/* Image styles */
+#cont img {
+    width: 100%; /* Make image responsive */
+    height: 200px; /* Fixed height for all images */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border-radius: 8px; /* Rounded corners for images */
+    margin-bottom: 15px; /* Space below the image */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for images */
+}
+
+/* Button container for Edit and Delete buttons */
+#cont .button-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px; /* Space between buttons */
+    margin-top: 15px; /* Space above the buttons */
+    box-shadow: none;
+}
+
+#cont button {
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 6px;
+    transition: transform 0.2s ease,;
+}
+
+#cont button:hover {
+    transform: translateY(-2px);
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+}
+
+/* Specific styles for delete and edit buttons */
+#cont button[id^='deleteBtn'] {
+    background: linear-gradient(135deg, #dc3545, #c82333);
+    /* box-shadow: 0 4px 6px rgba(220, 53, 69, 0.2); */
+}
+
+#cont button[id^='deleteBtn']:hover {
+    background: linear-gradient(135deg, #c82333, #a71d2a);
+}
+
+#cont button[id^='editBtn'] {
+    background: linear-gradient(135deg, #28a745, #218838);
+    /* box-shadow: 0 4px 6px rgba(40, 167, 69, 0.2); */
+}
+
+#cont button[id^='editBtn']:hover {
+    background: linear-gradient(135deg, #218838, #1a6e2c);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    #cont {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust for tablets */
+    }
+
+    #cont img {
+        height: 180px; /* Adjust image height for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    input[type="text"] {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    #cont {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust for mobile */
+        gap: 15px; /* Reduce gap for smaller screens */
+    }
+
+    #cont div {
+        padding: 15px;
+    }
+
+    #cont h1 {
+        font-size: 20px;
+    }
+
+    #cont h3 {
+        font-size: 16px;
+    }
+
+    #cont p {
+        font-size: 14px;
+    }
+
+    #cont img {
+        height: 150px; /* Adjust image height for mobile */
+    }
+
+    #cont .button-container {
+        flex-direction: column; /* Stack buttons vertically on mobile */
+        gap: 8px;
+    }
+
+    #cont button {
+        width: 100%; /* Full-width buttons on mobile */
+    }
+}

@@ -5,7 +5,7 @@
   "main": "bcrypt.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node bcrypt.js"
+    "start": "node bcrypt.js"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,10 @@
   "homepage": "https://github.com/ManasaDamera-GitHub/imp-codes#readme",
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "ejs": "^3.1.10",
     "express": "^4.21.2",
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "multer": "^1.4.5-lts.1",
+    "path": "^0.12.7"
   }
 }
